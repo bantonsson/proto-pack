@@ -1,0 +1,9 @@
+[workspace]
+members = [
+    "protoc-gen-pack",
+]
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+debug = true

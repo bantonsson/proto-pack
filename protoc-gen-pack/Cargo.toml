@@ -1,0 +1,28 @@
+[package]
+name = "protoc-gen-pack"
+version = "0.1.0"
+authors = ["Björn Antonsson <bjorn.antonsson@datadoghq.com>"]
+description = "Protocol buffers message pack code generator"
+#repository = "https://github.com/??"
+#homepage = "https://github.com/??"
+#documentation = "https://github.com/??"
+license = "Apache-2.0"
+edition = "2021"
+readme = "README.md"
+keywords = ["protobuf", "serialization"]
+categories = ["encoding"]
+
+[dependencies]
+prost-types = { version = "0.11", default-features = false }
+prost = { version = "0.11", default-features = false, features = ["std"] }
+#regex = { version = "1.5.5", default-features = false }
+log = "0.4"
+log4rs = "1.2"
+heck = "0.4"
+clap = { version = "4.3.21", features = ["derive"] }
+anyhow = "1.0"
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+debug = true
